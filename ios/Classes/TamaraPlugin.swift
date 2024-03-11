@@ -36,7 +36,7 @@ public class TamaraPlugin: NSObject, FlutterPlugin {
                 let paymentType = args["paymentType"] as! String
                 self.setPaymentType(paymentType: paymentType)
             case "setInstalments" :
-                guard let args = call.arguments as? [Int : Any] else {return}
+                guard let args = call.arguments as? [String : Int] else {return}
                 let instalments = args["instalments"] as! Int
                 self.setInstalments(instalments: instalments)
             case "setCustomerInfo":
