@@ -27,8 +27,8 @@ internal class TamaraPaymentViewModel : ViewModel() {
 
     private var orderLiveData = MutableLiveData<Order>()
 
-    var orderInfoLiveData: LiveData<Resource<CheckoutSession>> = Transformations.switchMap(orderLiveData){
-        repository.createOrder(it)
+    var orderInfoLiveData: LiveData<Resource<CheckoutSession>> = orderLiveData.switchMap { order ->
+        repository.createOrder(order)
     }
 
     fun updateOrder(order: Order){

@@ -28,6 +28,7 @@ apply plugin: 'kotlin-parcelize'
 apply plugin: 'maven-publish'
 
 android {
+    namespace 'co.tamara.sdk'
     compileSdkVersion 33
 
     defaultConfig {
@@ -43,6 +44,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     buildTypes {
